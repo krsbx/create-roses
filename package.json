@@ -1,0 +1,51 @@
+{
+  "name": "create-roses",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:krsbx/create-roses.git",
+  "author": "Muhammad Firdaus Sati <firdaus.sati51@gmail.com>",
+  "license": "MIT",
+  "start": {
+    "build": "tsup src/index.ts --format esm --clean --sourcemap --minify --metafile",
+    "dev": "tsup src/index.ts --format esm --watch --clean --onSuccess \"node dist/index.mjs\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.1",
+    "figlet": "^1.6.0",
+    "fs-extra": "^11.1.1",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.6",
+    "ora": "^6.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@types/figlet": "^1.5.6",
+    "@types/fs-extra": "^11.0.1",
+    "@types/gradient-string": "^1.1.2",
+    "@types/inquirer": "^9.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
